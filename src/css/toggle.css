@@ -1,0 +1,63 @@
+.input-field.toggle {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    position: relative;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.input-field.toggle label {
+    max-width: 40%;
+    margin-right: 10px;
+}
+
+.input-field.toggle label::after {
+    content: ':';
+}
+
+.input-field.toggle input {
+    -webkit-appearance: none;
+
+    background: #ededed;
+    width: 35px;
+    height: 12px;
+    border-radius: 50px;
+
+    position: relative;
+}
+
+.input-field.toggle input:focus {
+    outline: none;
+}
+
+.input-field.toggle input::before {
+    content: '';
+    position: absolute;
+    z-index: 2;
+
+    width: 16px;
+    height: 16px;
+    top: -2px;
+    left: 0;
+
+    border-radius: 50px;
+
+    background: #a3a3a3;
+    transition: all .2s ease-in-out;
+}
+
+.input-field.toggle input:checked::before {
+    content: '';
+    position: absolute;
+    z-index: 2;
+
+    width: 16px;
+    height: 16px;
+    top: -2px;
+    left: 19px;
+
+    border-radius: 50px;
+
+    background: var(--link-color);
+}
