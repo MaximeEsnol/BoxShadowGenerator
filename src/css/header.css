@@ -1,0 +1,30 @@
+@import url(colors.css);
+
+header {
+    margin: 0;
+    padding: 0;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--background-color);
+}
+
+h1 {
+    font-size: 1rem;
+    color: var(--main-color);
+    display: inline-block;
+    padding: 10px;
+    position: relative;
+    
+}
+
+.box {
+    padding: 5px;
+    padding-right: initial;
+    box-sizing: border-box;
+    border: solid 2px;
+    border-image-source: linear-gradient(to left top, #f7accf, #c787b1, #976494, #684476, #392759);
+    border-image-slice: 1;
+    border-right: none;
+}
