@@ -29,19 +29,15 @@ class Toggle extends React.Component {
         toggled: false
     };
 
-    shouldComponentUpdate(newProps, newState) {
-        return newState.toggled !== this.state.toggled;
-    }
-
-    handleChange = event => {
-        this.setState({ toggled: event.target.value });
-        this.props.handler(event);
+    handleChange = () => {
+        this.setState({ toggled: !this.state.toggled });
+        this.props.handler( );
     }
 
     render() {
         return (
             <div className="input-field toggle">
-                <label for={this.uniqueId}>
+                <label htmlFor={this.uniqueId}>
                     {this.props.label}
                 </label>
                 {
@@ -52,7 +48,8 @@ class Toggle extends React.Component {
                 }
                 <input type="checkbox"
                     checked={this.state.toggled}
-                    onChange={event => this.handleChange(event)} />
+                    onChange={ this.handleChange }
+                    id={this.uniqueId} />
                 {
                     this.props.enabledText &&
                     <p>
