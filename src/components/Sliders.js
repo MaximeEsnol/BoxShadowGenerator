@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import Slider from './Slider';
 import { chromePicker, ChromePicker } from 'react-color';
 import Content from './Content';
+import Toggle from './Toggle';
 
 class Sliders extends React.Component {
 
@@ -36,8 +37,16 @@ class Sliders extends React.Component {
                 <Slider label="Blur Radius" handler={this.handler.bind(this, "blurRadius")} min="0" />
                 <Slider label="Spread Radius" handler={this.handler.bind(this, "spreadRadius")} />
                 
-                <ChromePicker color={this.state.color}
-                onChange={this.handleColor.bind(this)} />
+                <div className="color-inset">
+                    <ChromePicker color={this.state.color}
+                    onChange={this.handleColor.bind(this)} />
+
+                    <Toggle label="Outset / Inset" 
+                    handler={this.handler.bind(this, "inset")} 
+                    enabledText="Inset" 
+                    disabledText="Outset"/>
+                </div>
+                
 
             </div>
         )
