@@ -53,12 +53,12 @@ class Slider extends Component {
                     </label>
 
                     <input type="number" 
+                    id={this.uniqueId}
                     value={this.state.currentValue} 
                     onChange={ event => this.handleChange( event ) }/>
                 </div>
                 
                 <input type="range" 
-                id={this.uniqueId}
                 min={this.props.min}
                 max={this.props.max} 
                 value={this.state.currentValue}
