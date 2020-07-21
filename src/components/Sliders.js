@@ -3,6 +3,7 @@ import Slider from './Slider';
 import { chromePicker, ChromePicker } from 'react-color';
 import Content from './Content';
 import Toggle from './Toggle';
+import css from './../css/sliders.css';
 
 class Sliders extends React.Component {
 
@@ -21,8 +22,8 @@ class Sliders extends React.Component {
         shadowIndex: 0
     }
 
-    handler = (model, event) => {
-        this.setState({ [model]: event.target.value });
+    handler = (model, value) => {
+        this.setState({ [model]: value });
     }
 
     handleColor = color => {
@@ -34,7 +35,7 @@ class Sliders extends React.Component {
             <div className="sliders">
                 <Slider label="Horizontal Offset" handler={this.handler.bind(this, "offsetX")} />
                 <Slider label="Vertical Offset" handler={this.handler.bind(this, "offsetY")} />
-                <Slider label="Blur Radius" handler={this.handler.bind(this, "blurRadius")} min="0" />
+                <Slider label="Blur Radius" handler={this.handler.bind(this, "blurRadius")} min={0} />
                 <Slider label="Spread Radius" handler={this.handler.bind(this, "spreadRadius")} />
                 
                 <div className="color-inset">
@@ -42,7 +43,7 @@ class Sliders extends React.Component {
                     onChange={this.handleColor.bind(this)} />
 
                     <Toggle label="Outset / Inset" 
-                    handler={this.handler.bind(this, "inset")} 
+                    handler={this.handler.bind(this, "inset", !this.state.inset)} 
                     enabledText="Inset" 
                     disabledText="Outset"/>
                 </div>
