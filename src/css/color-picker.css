@@ -1,0 +1,39 @@
+.input-field.color-picker {
+    position: relative;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.input-field.color-picker .picker-popover {
+    position: absolute;
+    z-index: 5;
+    right: 0;
+    user-select: none;
+}
+
+.input-field.color-picker .picker-cover{
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+}
+
+.input-field.color-picker .chrome-picker {
+    z-index: 15;
+    position: relative;
+    transform: translateY(calc( 50% + 15px ));
+}
+
+.input-field.color-picker .color-preview {
+    width: 20px;
+    height: 20px;
+    border: solid 2px #e3e3e3;
+    border-radius: 500px;
+}
+
+
