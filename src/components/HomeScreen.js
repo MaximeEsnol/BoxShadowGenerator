@@ -5,6 +5,7 @@ import Sliders from './Sliders';
 import Box from './Box';
 import Code from './Code';
 import './../css/homescreen.css';
+import ShadowList from './ShadowList';
 
 class HomeScreen extends Component {
 
@@ -67,6 +68,8 @@ class HomeScreen extends Component {
                     boxColor={this.state.boxColor} 
                     boxShadows={this.state.boxShadows}
                     boxSize={this.state.boxSize}/>
+                    <ShadowList shadows={this.state.boxShadows}
+                    current={this.state.currentShadowIndex}/>
                 </Content>
 
                 
