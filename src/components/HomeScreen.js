@@ -9,7 +9,10 @@ import css from './../css/homescreen.css';
 class HomeScreen extends Component {
 
     state = {
-        boxShadow: "0px 2px 5px 2px #00000059;"
+        boxShadow: "0px 2px 5px 2px rgba(0, 0, 0, 0.40)",
+        backgroundColor: "rgba(255, 255, 255, 1)",
+        boxColor: "rgba(240, 240, 240, 1)",
+        boxSize: 100
     }
 
     handleShadowValues = values => {
@@ -22,9 +25,12 @@ class HomeScreen extends Component {
         boxShadow += values.spreadRadius + "px ";
         boxShadow += values.color;
 
-        console.log(boxShadow);
-
-        this.setState({boxShadow: boxShadow});
+        this.setState({
+            boxShadow: boxShadow, 
+            backgroundColor: values.backgroundColor, 
+            boxColor: values.boxColor,
+            boxSize: values.boxSize
+        });
     }
 
     render() {
@@ -33,7 +39,10 @@ class HomeScreen extends Component {
                 <Header/>
                 <Content>
                     <Sliders onChangeValues={this.handleShadowValues.bind(this)} />
-                    <Box boxShadow={this.state.boxShadow}/>
+                    <Box backgroundColor={this.state.backgroundColor} 
+                    boxColor={this.state.boxColor} 
+                    boxShadow={this.state.boxShadow}
+                    boxSize={this.state.boxSize}/>
                 </Content>
                 <Content>
                     <Code/>
