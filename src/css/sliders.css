@@ -2,3 +2,8 @@
     display: grid;
     grid-template-columns: 50% 50%;
 }
+
+.color-inset > .chrome-picker {
+    width: 90% !important;
+    margin: 0;
+}
