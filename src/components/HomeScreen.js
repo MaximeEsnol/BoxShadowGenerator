@@ -44,9 +44,9 @@ class HomeScreen extends Component {
                     boxShadow={this.state.boxShadow}
                     boxSize={this.state.boxSize}/>
                 </Content>
-                <Content>
-                    <Code/>
-                </Content>
+
+                
+                <Code shadows={this.state.boxShadow}/>
             </div>
         )
     }
