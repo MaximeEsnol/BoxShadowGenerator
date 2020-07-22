@@ -11,28 +11,22 @@ class Sliders extends React.Component {
     state = {
         inset: false,
         offsetX: 0,
-        offsetY: 0,
-        blurRadius: 0,
-        spreadRadius: 0,
-        color: "rgba(0,0,0,1)",
+        offsetY: 2,
+        blurRadius: 5,
+        spreadRadius: 2,
+        color: "rgba(0,0,0,0.40)",
         shadowIndex: 0,
-        boxColor: "",
-        backgroundColor: ""
+        boxColor: "rgba(240, 240, 240, 1)",
+        backgroundColor: "rgba(255, 255, 255, 1)",
+        boxSize: 1
     }
 
     handler = (model, value) => {
-        this.setState({ [model]: value });
-
-        this._callHandlerProp();
+        this.setState({ [model]: value }, this._callHandlerProp);
     }
 
     handleColor = color => {
-        console.log(color);
-        // let rgba = "rgba(";
-        // rgba += color.rgb.r + "," + color.rgb.g + "," + color.rgb.b + "," + color.rgb.a + ")";
-        this.setState({ color: color.current });
-
-        this._callHandlerProp();
+        this.setState({ color: color }, this._callHandlerProp);
     }
 
     _callHandlerProp = () => {
@@ -42,12 +36,17 @@ class Sliders extends React.Component {
     render() {
         return (
             <div className="sliders">
-                <Slider label="Horizontal Offset" handler={this.handler.bind(this, "offsetX")} />
-                <Slider label="Vertical Offset" handler={this.handler.bind(this, "offsetY")} />
-                <Slider label="Blur Radius" handler={this.handler.bind(this, "blurRadius")} min={0} />
-                <Slider label="Spread Radius" handler={this.handler.bind(this, "spreadRadius")} />
+                <Toggle label="Outset / Inset"
+                    handler={this.handler.bind(this, "inset", !this.state.inset)}
+                    enabledText="Inset"
+                    disabledText="Outset" />
+                <Slider label="Horizontal Offset" handler={this.handler.bind(this, "offsetX")} defaultValue={0}/>
+                <Slider label="Vertical Offset" handler={this.handler.bind(this, "offsetY")} defaultValue={2}/>
+                <Slider label="Blur Radius" handler={this.handler.bind(this, "blurRadius")} min={0} defaultValue={5} />
+                <Slider label="Spread Radius" handler={this.handler.bind(this, "spreadRadius")} defaultValue={2} />
 
-                <ColorPicker label="Shadow Color" handler={this.handleColor.bind(this)}/>
+                <ColorPicker label="Shadow Color" handler={this.handleColor.bind(this)}
+                defaultColor={{r: 0, g: 0, b: 0, a: 0.40}}/>
 
                 <ColorPicker label="Box Color" 
                 handler={this.handler.bind(this, "boxColor")}
@@ -57,10 +56,12 @@ class Sliders extends React.Component {
                 handler={this.handler.bind(this, "backgroundColor")}
                 defaultColor={ {r: 255, g: 255, b: 255, a: 1} } />
 
-                <Toggle label="Outset / Inset"
-                    handler={this.handler.bind(this, "inset", !this.state.inset)}
-                    enabledText="Inset"
-                    disabledText="Outset" />
+                <Slider label="Box Size" 
+                handler={this.handler.bind(this, "boxSize")} 
+                min={0} 
+                max={150} 
+                defaultValue={100}/>
+
             </div>
         )
     }
