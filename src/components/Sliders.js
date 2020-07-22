@@ -22,10 +22,18 @@ class Sliders extends React.Component {
 
     handler = (model, value) => {
         this.setState({ [model]: value });
+
+        this._callHandlerProp();
     }
 
     handleColor = color => {
         this.setState({ color: color.rgb });
+
+        this._callHandlerProp();
+    }
+
+    _callHandlerProp = () => {
+        this.props.onChangeValues( this.state );
     }
 
     render() {
