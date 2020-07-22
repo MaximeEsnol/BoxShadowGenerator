@@ -1,23 +1,23 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "112a31b4884774999a434e72d360fd2b",
+    "revision": "1df7c8f790b8a334166c8d210cacdac3",
     "url": "/BoxShadowGenerator/index.html"
   },
   {
-    "revision": "c3e7dd8895ecbcbad446",
+    "revision": "7a92565436fd73e12e6a",
     "url": "/BoxShadowGenerator/static/css/main.4d7aef96.chunk.css"
   },
   {
-    "revision": "d75983df7357c7f08797",
-    "url": "/BoxShadowGenerator/static/js/2.ff6dfeb5.chunk.js"
+    "revision": "138322b63175fdf625c4",
+    "url": "/BoxShadowGenerator/static/js/2.5de1fbd7.chunk.js"
   },
   {
     "revision": "e88a3e95b5364d46e95b35ae8c0dc27d",
-    "url": "/BoxShadowGenerator/static/js/2.ff6dfeb5.chunk.js.LICENSE.txt"
+    "url": "/BoxShadowGenerator/static/js/2.5de1fbd7.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "c3e7dd8895ecbcbad446",
-    "url": "/BoxShadowGenerator/static/js/main.96497108.chunk.js"
+    "revision": "7a92565436fd73e12e6a",
+    "url": "/BoxShadowGenerator/static/js/main.0d8c932d.chunk.js"
   },
   {
     "revision": "8df65ad965f0efff113c",
