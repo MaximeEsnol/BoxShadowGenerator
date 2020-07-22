@@ -31,6 +31,10 @@ class Slider extends Component {
         label: "Slider"
     }
 
+    componentDidMount() {
+        this.setState({currentValue: this.props.defaultValue});
+    }
+
     constructor( props ) {
         super();
         this.props = props;
