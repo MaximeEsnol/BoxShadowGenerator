@@ -7,18 +7,6 @@
     padding: 10px;
     box-sizing: border-box;
 
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: space-around;
-}
-
-.content > div {
-    position: relative;
-    width: 48%;
-    min-width: 350px;
-    height: 100%;
-    margin: 5px;
-    box-sizing: border-box;
+    display: grid;
+    grid-template-columns: 20% 60% 20%;
 }
