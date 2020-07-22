@@ -27,7 +27,10 @@ class Sliders extends React.Component {
     }
 
     handleColor = color => {
-        this.setState({ color: color.rgb });
+        console.log(color);
+        // let rgba = "rgba(";
+        // rgba += color.rgb.r + "," + color.rgb.g + "," + color.rgb.b + "," + color.rgb.a + ")";
+        this.setState({ color: color.current });
 
         this._callHandlerProp();
     }
@@ -44,7 +47,7 @@ class Sliders extends React.Component {
                 <Slider label="Blur Radius" handler={this.handler.bind(this, "blurRadius")} min={0} />
                 <Slider label="Spread Radius" handler={this.handler.bind(this, "spreadRadius")} />
 
-                <ColorPicker label="Shadow Color" handler={this.handler.bind(this, "color")}/>
+                <ColorPicker label="Shadow Color" handler={this.handleColor.bind(this)}/>
 
                 <ColorPicker label="Box Color" 
                 handler={this.handler.bind(this, "boxColor")}
