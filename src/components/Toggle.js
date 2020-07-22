@@ -1,7 +1,7 @@
 import React from 'react';
 import uniqid from 'uniqid';
 import PropTypes from 'prop-types';
-import css from './../css/toggle.css';
+import './../css/toggle.css';
 
 class Toggle extends React.Component {
 

@@ -4,7 +4,7 @@ import Content from './Content';
 import Sliders from './Sliders';
 import Box from './Box';
 import Code from './Code';
-import css from './../css/homescreen.css';
+import './../css/homescreen.css';
 
 class HomeScreen extends Component {
 

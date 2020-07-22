@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import uniqid from 'uniqid';
-import css from './../css/slider.css';
+import './../css/slider.css';
 import PropTypes from 'prop-types';
 
 /**
