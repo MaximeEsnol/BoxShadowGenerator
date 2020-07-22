@@ -9,24 +9,48 @@ import css from './../css/homescreen.css';
 class HomeScreen extends Component {
 
     state = {
-        boxShadow: "0px 2px 5px 2px rgba(0, 0, 0, 0.40)",
+        currentShadowIndex: 0,
+        boxShadows: [],
         backgroundColor: "rgba(255, 255, 255, 1)",
         boxColor: "rgba(240, 240, 240, 1)",
         boxSize: 100
     }
 
-    handleShadowValues = values => {
-        let boxShadow = "";
+    verifyValidShadowIndex = () => {
+        if ( this.state.boxShadows.length <= this.state.currentShadowIndex ) {
+            let newIndex = this.state.boxShadows.length;
+            
+            this.setState( {
+                boxShadows: [...this.state.boxShadows, {}],
+                currentShadowIndex: newIndex
+            } );
+        }
+    }
 
-        boxShadow += ( values.inset ) ? "inset " : " ";
-        boxShadow += values.offsetX + "px ";
-        boxShadow += values.offsetY + "px ";
-        boxShadow += values.blurRadius + "px ";
-        boxShadow += values.spreadRadius + "px ";
-        boxShadow += values.color;
+    updateCurrentShadow = newShadow => {
+        let shadows = [...this.state.boxShadows];
+        let targetShadow = [shadows[ this.state.currentShadowIndex ]];
+        targetShadow = newShadow;
+        shadows[ this.state.currentShadowIndex ] = targetShadow;
+
+        return shadows;
+    }
+
+    handleShadowValues = values => {
+
+        this.verifyValidShadowIndex();
+
+        let shadow = {
+            inset: values.inset,
+            offsetX: values.offsetX,
+            offsetY: values.offsetY,
+            blurRadius: values.blurRadius,
+            spreadRadius: values.spreadRadius,
+            color: values.color
+        };
 
         this.setState({
-            boxShadow: boxShadow, 
+            boxShadows: this.updateCurrentShadow( shadow ), 
             backgroundColor: values.backgroundColor, 
             boxColor: values.boxColor,
             boxSize: values.boxSize
@@ -41,12 +65,12 @@ class HomeScreen extends Component {
                     <Sliders onChangeValues={this.handleShadowValues.bind(this)} />
                     <Box backgroundColor={this.state.backgroundColor} 
                     boxColor={this.state.boxColor} 
-                    boxShadow={this.state.boxShadow}
+                    boxShadows={this.state.boxShadows}
                     boxSize={this.state.boxSize}/>
                 </Content>
 
                 
-                <Code shadows={this.state.boxShadow}/>
+                <Code shadows={this.state.boxShadows}/>
             </div>
         )
     }

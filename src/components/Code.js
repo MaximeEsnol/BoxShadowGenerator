@@ -1,10 +1,12 @@
 import React from 'react';
+import { getBoxShadowFromObject } from './../utils/shadow';
 
 const Code = props => {
-    return(
+
+    return (
         <div className="code">
             <code>
-                box-shadow: {props.shadows};
+                box-shadow: { getBoxShadowFromObject( props.shadows ) };
             </code>
         </div>
     )
