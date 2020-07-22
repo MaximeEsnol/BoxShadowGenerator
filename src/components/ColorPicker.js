@@ -16,7 +16,7 @@ const ColorPicker = ({ label, handler, defaultColor }) => {
 
         formatted.current = formattedColor;
 
-        handler(formatted);
+        handler(formatted.current );
     };
 
     const togglePicker = () => {
