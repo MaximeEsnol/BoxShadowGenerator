@@ -1,9 +1,7 @@
-import React, { useState } from 'react';
+import React from 'react';
 import Slider from './Slider';
-import { chromePicker, ChromePicker } from 'react-color';
-import Content from './Content';
 import Toggle from './Toggle';
-import css from './../css/sliders.css';
+import './../css/sliders.css';
 import ColorPicker from './ColorPicker';
 
 class Sliders extends React.Component {
@@ -18,7 +16,7 @@ class Sliders extends React.Component {
         shadowIndex: 0,
         boxColor: "rgba(240, 240, 240, 1)",
         backgroundColor: "rgba(255, 255, 255, 1)",
-        boxSize: 1
+        boxSize: 100
     }
 
     handler = (model, value) => {
