@@ -48,7 +48,6 @@ class Slider extends Component {
     }
 
     render() {
-        const { min, max, defaultValue, handler, label } = this.props;
         return(
             <div className="input-field slider">
                 <div className="user-information">
