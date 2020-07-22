@@ -4,6 +4,7 @@ import { chromePicker, ChromePicker } from 'react-color';
 import Content from './Content';
 import Toggle from './Toggle';
 import css from './../css/sliders.css';
+import ColorPicker from './ColorPicker';
 
 class Sliders extends React.Component {
 
@@ -13,13 +14,10 @@ class Sliders extends React.Component {
         offsetY: 0,
         blurRadius: 0,
         spreadRadius: 0,
-        color: {
-            r: 0,
-            g: 0,
-            b: 0,
-            a: 0
-        },
-        shadowIndex: 0
+        color: "rgba(0,0,0,1)",
+        shadowIndex: 0,
+        boxColor: "",
+        backgroundColor: ""
     }
 
     handler = (model, value) => {
@@ -37,18 +35,21 @@ class Sliders extends React.Component {
                 <Slider label="Vertical Offset" handler={this.handler.bind(this, "offsetY")} />
                 <Slider label="Blur Radius" handler={this.handler.bind(this, "blurRadius")} min={0} />
                 <Slider label="Spread Radius" handler={this.handler.bind(this, "spreadRadius")} />
-                
-                <div className="color-inset">
-                    <ChromePicker color={this.state.color}
-                    onChange={this.handleColor.bind(this)} />
 
-                    <Toggle label="Outset / Inset" 
-                    handler={this.handler.bind(this, "inset", !this.state.inset)} 
-                    enabledText="Inset" 
-                    disabledText="Outset"/>
-                </div>
-                
+                <ColorPicker label="Shadow Color" handler={this.handler.bind(this, "color")}/>
 
+                <ColorPicker label="Box Color" 
+                handler={this.handler.bind(this, "boxColor")}
+                defaultColor={ {r: 240, g: 240, b: 240, a: 1} } />
+
+                <ColorPicker label="Background Color" 
+                handler={this.handler.bind(this, "backgroundColor")}
+                defaultColor={ {r: 255, g: 255, b: 255, a: 1} } />
+
+                <Toggle label="Outset / Inset"
+                    handler={this.handler.bind(this, "inset", !this.state.inset)}
+                    enabledText="Inset"
+                    disabledText="Outset" />
             </div>
         )
     }
