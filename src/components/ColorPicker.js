@@ -6,7 +6,7 @@ import { debounce } from 'lodash';
 import './../css/color-picker.css';
 
 const ColorPicker = ({ label, handler, defaultColor }) => {
-    const formatted = useRef("rgba(0,0,0,1)");
+    const formatted = useRef("rgba(" + defaultColor.r + ", " + defaultColor.g + ", " + defaultColor.b + ", " + defaultColor.a + ")");
     const [opened, setOpened] = useState(false);
     const [color, setColor] = useState( {rgb: defaultColor });
 
