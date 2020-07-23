@@ -10,6 +10,8 @@
     padding: 5px;
     margin-bottom: 7px;
 
+    cursor: pointer;
+
     transition: .1s ease-in-out;
 }
 
