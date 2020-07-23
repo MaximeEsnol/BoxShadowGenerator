@@ -6,7 +6,7 @@ import './../css/shadow-layer.css';
 const ShadowLayer = props => {
 
     return (
-        <div className={"shadow-layer " + (props.isActive && "active") }>
+        <div className={"shadow-layer " + (props.isActive && "active") } onClick={props.onClickLayer.bind(this, props.order)}>
             <div className="shadow-preview">
                 <div className="shadow-preview-box" 
                 style={{boxShadow: getBoxShadowFromObject( [props.shadow] )}}>

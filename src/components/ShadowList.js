@@ -9,7 +9,12 @@ const ShadowList = props => {
         <div className="shadow-list">
             {
                 props.shadows.map( ( shadow, index ) => 
-                    <ShadowLayer key={index} isActive={(props.current === index)} order={index} shadow={shadow}/>
+                    <ShadowLayer key={index} 
+                    isActive={(props.current === index)} 
+                    order={index} 
+                    shadow={shadow}
+                    onClickLayer={(order) => props.onClickLayer(order)}
+                    />
                 )
             }
             <div className="add-shadow">

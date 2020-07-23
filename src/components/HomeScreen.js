@@ -67,6 +67,11 @@ class HomeScreen extends Component {
 
     }
 
+    handleSelectLayer = ( layerIndex ) => {
+        console.log("ok");
+        this.setState({currentShadowIndex: layerIndex});
+    }
+
     render() {
         return(
             <div className="container">
@@ -79,7 +84,8 @@ class HomeScreen extends Component {
                     boxSize={this.state.boxSize}/>
                     <ShadowList shadows={this.state.boxShadows}
                     current={this.state.currentShadowIndex}
-                    addShadowHandler={this.handleAddShadow.bind(this)}/>
+                    addShadowHandler={this.handleAddShadow.bind(this)}
+                    onClickLayer={this.handleSelectLayer.bind(this)}/>
                 </Content>
 
                 
