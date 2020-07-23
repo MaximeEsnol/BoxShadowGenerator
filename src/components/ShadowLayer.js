@@ -1,12 +1,20 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { getBoxShadowFromObject } from '../utils/shadow';
+import './../css/shadow-layer.css';
 
 const ShadowLayer = props => {
 
     return (
         <div className="shadow-layer">
+            <div className="shadow-preview">
+                <div className="shadow-preview-box" 
+                style={{boxShadow: getBoxShadowFromObject( [props.shadow] )}}>
+
+                </div>
+            </div>
             <p>
-                {props.order}
+                Shadow #{props.order + 1}
             </p>
         </div>
     )
