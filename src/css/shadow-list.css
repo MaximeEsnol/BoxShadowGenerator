@@ -1,0 +1,8 @@
+.plus-button {
+    color: var(--link-color);
+    transition: .25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.plus-button:hover {
+    transform: scale(1.5);
+}
