@@ -19,6 +19,10 @@ class Sliders extends React.Component {
         boxSize: 100
     }
 
+    componentDidMount() {
+        this._callHandlerProp();
+    }
+
     handler = (model, value) => {
         this.setState({ [model]: value }, this._callHandlerProp);
     }
