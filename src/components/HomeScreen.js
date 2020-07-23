@@ -58,6 +58,15 @@ class HomeScreen extends Component {
         });
     }
 
+    handleAddShadow = () => {
+        let lastShadow = { ...this.state.boxShadows[this.state.currentShadowIndex]};
+        this.setState( { 
+            boxShadows: [...this.state.boxShadows, lastShadow ],
+            currentShadowIndex: this.state.currentShadowIndex+1
+        } );
+
+    }
+
     render() {
         return(
             <div className="container">
@@ -69,7 +78,8 @@ class HomeScreen extends Component {
                     boxShadows={this.state.boxShadows}
                     boxSize={this.state.boxSize}/>
                     <ShadowList shadows={this.state.boxShadows}
-                    current={this.state.currentShadowIndex}/>
+                    current={this.state.currentShadowIndex}
+                    addShadowHandler={this.handleAddShadow.bind(this)}/>
                 </Content>
 
                 
