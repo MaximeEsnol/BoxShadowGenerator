@@ -9,6 +9,23 @@
     box-sizing: border-box;
     padding: 5px;
     margin-bottom: 7px;
+
+    transition: .1s ease-in-out;
+}
+
+.shadow-layer.active p::after {
+    content: 'Selected';
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+    font-size: .8rem;
+    margin-left: 10px;
+    color: var(--link-color);
+}
+
+.shadow-layer:hover{
+    background: #ededed;
 }
 
 .shadow-layer .shadow-preview {
@@ -19,8 +36,8 @@
     border: solid 1px #e0e0e0;
     border-radius: 2px;
     overflow: hidden;
-    width: 50px;
-    height: 50px;
+    width: 45px;
+    height: 45px;
     background-color: white;
 }
 
