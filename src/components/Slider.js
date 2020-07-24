@@ -43,8 +43,9 @@ class Slider extends Component {
 
     handleChange = ( event ) => {
         event.stopPropagation();
-        this.setState( { currentValue: event.target.value } );
-        this.props.handler( event.target.value );
+        let numberValue = parseInt( event.target.value );
+        this.setState( { currentValue: numberValue } );
+        this.props.handler( numberValue );
     }
 
     render() {
