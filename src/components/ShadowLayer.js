@@ -2,6 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { getBoxShadowFromObject } from '../utils/shadow';
 import './../css/shadow-layer.css';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faTimes } from '@fortawesome/free-solid-svg-icons';
 
 const ShadowLayer = props => {
 
@@ -10,7 +12,9 @@ const ShadowLayer = props => {
             <div className="shadow-preview">
                 <div className="shadow-preview-box" 
                 style={{boxShadow: getBoxShadowFromObject( [props.shadow] )}}>
-
+                </div>
+                <div className="delete-layer-container">
+                    <FontAwesomeIcon icon={faTimes}/>
                 </div>
             </div>
             <p>
