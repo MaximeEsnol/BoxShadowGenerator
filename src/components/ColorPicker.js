@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react';
+import React, { useRef, useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { ChromePicker } from 'react-color';
 import './../css/color-picker.css';
@@ -8,13 +8,15 @@ const ColorPicker = ({ label, handler, defaultColor }) => {
     const [opened, setOpened] = useState(false);
     const [color, setColor] = useState( {rgb: defaultColor });
 
+    useEffect( () => {
+        formatColor(defaultColor);
+        setColor( defaultColor );
+    }, [defaultColor] );
+
     const handleColor = color => {
         setColor(color.rgb);
 
-        let formattedColor = "rgba(";
-        formattedColor += color.rgb.r + ", " + color.rgb.g + ", " + color.rgb.b + ", " + color.rgb.a + ")";
-
-        formatted.current = formattedColor;
+        formatted.current = formatColor(color.rgb);
 
         handler(formatted.current );
     };
@@ -23,6 +25,11 @@ const ColorPicker = ({ label, handler, defaultColor }) => {
         setOpened(!opened);
     };
 
+    const formatColor = color => {
+        let formattedColor = "rgba(";
+        formattedColor += color.r + ", " + color.g + ", " + color.b + ", " + color.a + ")";
+        return formattedColor;
+    }
 
     return (
         <div className="input-field color-picker">
