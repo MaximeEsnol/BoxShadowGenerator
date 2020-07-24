@@ -13,3 +13,13 @@ export const getBoxShadowFromObject = shadows => {
 
     return boxShadow;
 }
+
+export const DEFAULT_SHADOW = {
+    inset: false,
+    offsetX: 0,
+    offsetY: 4,
+    blurRadius: 10,
+    spreadRadius: 4,
+    color: "rgba(50,50,50,0.30)",
+
+}
