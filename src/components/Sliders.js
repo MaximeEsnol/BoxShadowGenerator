@@ -68,9 +68,9 @@ class Sliders extends React.Component {
 
                 <Slider label="Box Size" 
                 handler={this.handler.bind(this, "boxSize")} 
-                min={0} 
-                max={150} 
-                defaultValue={100}/>
+                min={5} 
+                max={300} 
+                defaultValue={300}/>
 
             </div>
         )
