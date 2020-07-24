@@ -3,6 +3,7 @@ import Slider from './Slider';
 import Toggle from './Toggle';
 import './../css/sliders.css';
 import ColorPicker from './ColorPicker';
+import { stringToRgbObject } from './../utils/shadow';
 
 
 class Sliders extends React.Component {
@@ -55,7 +56,7 @@ class Sliders extends React.Component {
                 <Slider label="Spread Radius" handler={this.handler.bind(this, "spreadRadius")} defaultValue={this.props.defaultShadow.spreadRadius} />
 
                 <ColorPicker label="Shadow Color" handler={this.handleColor.bind(this)}
-                defaultColor={{r: 0, g: 0, b: 0, a: 0.40}}/>
+                defaultColor={stringToRgbObject( this.props.defaultShadow.color )}/>
 
                 <ColorPicker label="Box Color" 
                 handler={this.handler.bind(this, "boxColor")}
