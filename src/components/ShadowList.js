@@ -14,6 +14,7 @@ const ShadowList = props => {
                     order={index} 
                     shadow={shadow}
                     onClickLayer={(order) => props.onClickLayer(order)}
+                    onClickDelete={(order) => props.onClickDelete(order)}
                     />
                 )
             }

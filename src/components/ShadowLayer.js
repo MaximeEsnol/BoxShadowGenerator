@@ -13,7 +13,7 @@ const ShadowLayer = props => {
                 <div className="shadow-preview-box" 
                 style={{boxShadow: getBoxShadowFromObject( [props.shadow] )}}>
                 </div>
-                <div className="delete-layer-container">
+                <div className="delete-layer-container" onClick={props.onClickDelete.bind(this, props.order)}>
                     <FontAwesomeIcon icon={faTimes}/>
                 </div>
             </div>

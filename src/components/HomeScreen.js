@@ -76,6 +76,24 @@ class HomeScreen extends Component {
         });
     }
 
+    handleDeleteLayer = ( layerIndex ) => {
+        if ( this.state.boxShadows.length === 1 ) {
+            alert("You can't delete this layer.");
+            return;
+        }
+
+        let shadows = [...this.state.boxShadows];
+        shadows.splice( layerIndex, 1 );
+
+        let newIndex = ( layerIndex === 0 ) ? layerIndex : layerIndex - 1;
+
+        this.setState({
+            boxShadows: shadows,
+            currentShadowIndex: newIndex,
+            defaultSelection: shadows[newIndex]
+        });
+    }
+
     render() {
         return(
             <div className="container">
@@ -90,7 +108,8 @@ class HomeScreen extends Component {
                     <ShadowList shadows={this.state.boxShadows}
                     current={this.state.currentShadowIndex}
                     addShadowHandler={this.handleAddShadow.bind(this)}
-                    onClickLayer={this.handleSelectLayer.bind(this)}/>
+                    onClickLayer={this.handleSelectLayer.bind(this)}
+                    onClickDelete={this.handleDeleteLayer.bind(this)}/>
                 </Content>
 
                 
