@@ -1,75 +1,68 @@
-import React, { Component } from 'react';
+import React, { useRef, useEffect, useState } from 'react';
 import uniqid from 'uniqid';
 import './../css/slider.css';
 import PropTypes from 'prop-types';
 
-/**
- * Represents a stylized input with type "range". 
- */
-class Slider extends Component {
-    state = {
-        currentValue: 0
-    }
+const Slider = ( {min, max, defaultValue, handler, label} ) => {
+    const uniqueId = useRef(uniqid()).current;
+    const [currentValue, setCurrentValue] = useState(defaultValue);
 
-    static propTypes = {
-        /** The minimum value. Default: -100 */
-        min: PropTypes.number,
-        /** The maximum value. Default: 100 */
-        max: PropTypes.number,
-        /** The default value. Default: 0 */
-        defaultValue: PropTypes.number,
-        /** A function that handles the slider value. */
-        handler: PropTypes.func,
-        /** A label to shortly describe the slider. Default: "Slider" */
-        label: PropTypes.string
-    }
+    useEffect( () => {
+        setCurrentValue( defaultValue );
+    }, [defaultValue]);
 
-    static defaultProps = {
-        min: -100,
-        max: 100,
-        defaultValue: 0,
-        label: "Slider"
-    }
-
-    componentDidMount() {
-        this.setState({currentValue: this.props.defaultValue});
-    }
-
-    constructor( props ) {
-        super();
-        this.props = props;
-        this.uniqueId = uniqid();
-    }
-
-    handleChange = ( event ) => {
+    const handleChange = event => {
         event.stopPropagation();
-        let numberValue = parseInt( event.target.value );
-        this.setState( { currentValue: numberValue } );
-        this.props.handler( numberValue );
+        
+        updateValue( event.target.value );
     }
 
-    render() {
-        return(
-            <div className="input-field slider">
-                <div className="user-information">
-                    <label htmlFor={this.uniqueId}>
-                        { this.props.label }
-                    </label>
+    const updateValue = newValue => {
+        let numberValue = parseInt( newValue );
+        setCurrentValue( numberValue );
+        handler( numberValue );
+    }
 
-                    <input type="number" 
-                    id={this.uniqueId}
-                    value={this.state.currentValue} 
-                    onChange={ event => this.handleChange( event ) }/>
-                </div>
-                
-                <input type="range" 
-                min={this.props.min}
-                max={this.props.max} 
-                value={this.state.currentValue}
-                onChange={ event => this.handleChange( event ) }/>
+    return (
+        <div className="input-field slider">
+            <div className="user-information">
+                <label htmlFor={uniqueId}>
+                    {label}
+                </label>
+
+                <input type="number"
+                    id={uniqueId}
+                    value={currentValue}
+                    onChange={event => handleChange(event)} />
             </div>
-        )
-    }
+
+            <input type="range"
+                min={min}
+                max={max}
+                value={currentValue}
+                onChange={event => handleChange(event)} />
+        </div>
+    )
+}
+
+Slider.propTypes = {
+    /** The minimum value. Default: -100 */
+    min: PropTypes.number,
+    /** The maximum value. Default: 100 */
+    max: PropTypes.number,
+    /** The default value. Default: 0 */
+    defaultValue: PropTypes.number,
+    /** A function that handles the slider value. */
+    handler: PropTypes.func,
+    /** A label to shortly describe the slider. Default: "Slider" */
+    label: PropTypes.string
+}
+
+Slider.defaultProps = {
+    min: -100,
+    max: 100,
+    defaultValue: 0,
+    label: "Slider"
 }
 
 export default Slider;
