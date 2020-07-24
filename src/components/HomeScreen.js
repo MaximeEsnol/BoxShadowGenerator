@@ -70,7 +70,6 @@ class HomeScreen extends Component {
     }
 
     handleSelectLayer = ( layerIndex ) => {
-        console.log(this.state.boxShadows[layerIndex]);
         this.setState({
             currentShadowIndex: layerIndex,
             defaultSelection: this.state.boxShadows[layerIndex]
