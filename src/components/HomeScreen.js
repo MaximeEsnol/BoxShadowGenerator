@@ -6,12 +6,14 @@ import Box from './Box';
 import Code from './Code';
 import './../css/homescreen.css';
 import ShadowList from './ShadowList';
+import { DEFAULT_SHADOW } from './../utils/shadow';
 
 class HomeScreen extends Component {
 
     state = {
         currentShadowIndex: 0,
         boxShadows: [],
+        defaultSelection: DEFAULT_SHADOW,
         backgroundColor: "rgba(255, 255, 255, 1)",
         boxColor: "rgba(240, 240, 240, 1)",
         boxSize: 100
@@ -68,8 +70,11 @@ class HomeScreen extends Component {
     }
 
     handleSelectLayer = ( layerIndex ) => {
-        console.log("ok");
-        this.setState({currentShadowIndex: layerIndex});
+        console.log(this.state.boxShadows[layerIndex]);
+        this.setState({
+            currentShadowIndex: layerIndex,
+            defaultSelection: this.state.boxShadows[layerIndex]
+        });
     }
 
     render() {
@@ -77,7 +82,8 @@ class HomeScreen extends Component {
             <div className="container">
                 <Header/>
                 <Content>
-                    <Sliders onChangeValues={this.handleShadowValues.bind(this)} />
+                    <Sliders onChangeValues={this.handleShadowValues.bind(this)}
+                    defaultShadow={this.state.defaultSelection} />
                     <Box backgroundColor={this.state.backgroundColor} 
                     boxColor={this.state.boxColor} 
                     boxShadows={this.state.boxShadows}
