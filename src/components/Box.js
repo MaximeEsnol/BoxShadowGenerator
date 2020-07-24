@@ -13,7 +13,8 @@ const Box = props => {
                 {
                     boxShadow: getBoxShadowFromObject( props.boxShadows ), 
                     backgroundColor: props.boxColor,
-                    transform: 'scale(' + props.boxSize/100 + ')'
+                    width: props.boxSize + "px",
+                    height: props.boxSize + "px"
                 }
             }>
                 
