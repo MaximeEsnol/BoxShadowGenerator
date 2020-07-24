@@ -4,23 +4,30 @@ import Toggle from './Toggle';
 import './../css/sliders.css';
 import ColorPicker from './ColorPicker';
 
+
 class Sliders extends React.Component {
 
     state = {
         inset: false,
         offsetX: 0,
-        offsetY: 2,
-        blurRadius: 5,
-        spreadRadius: 2,
-        color: "rgba(0,0,0,0.40)",
+        offsetY: 0,
+        blurRadius: 0,
+        spreadRadius: 0,
+        color: "rgba(0,0,0,0)",
         shadowIndex: 0,
-        boxColor: "rgba(240, 240, 240, 1)",
-        backgroundColor: "rgba(255, 255, 255, 1)",
+        boxColor: "rgba(255, 255, 255, 1)",
+        backgroundColor: "rgba(240, 240, 240, 1)",
         boxSize: 100
     }
 
+    componentDidUpdate(prevProps) {
+        if ( prevProps.defaultShadow !== this.props.defaultShadow ){
+            this.setState({...this.props.defaultShadow});
+        }
+    }
+
     componentDidMount() {
-        this._callHandlerProp();
+        this.setState( {...this.props.defaultShadow}, () => this._callHandlerProp() );
     }
 
     handler = (model, value) => {
@@ -42,10 +49,10 @@ class Sliders extends React.Component {
                     handler={this.handler.bind(this, "inset", !this.state.inset)}
                     enabledText="Inset"
                     disabledText="Outset" />
-                <Slider label="Horizontal Offset" handler={this.handler.bind(this, "offsetX")} defaultValue={0}/>
-                <Slider label="Vertical Offset" handler={this.handler.bind(this, "offsetY")} defaultValue={2}/>
-                <Slider label="Blur Radius" handler={this.handler.bind(this, "blurRadius")} min={0} defaultValue={5} />
-                <Slider label="Spread Radius" handler={this.handler.bind(this, "spreadRadius")} defaultValue={2} />
+                <Slider label="Horizontal Offset" handler={this.handler.bind(this, "offsetX")} defaultValue={this.props.defaultShadow.offsetX}/>
+                <Slider label="Vertical Offset" handler={this.handler.bind(this, "offsetY")} defaultValue={this.props.defaultShadow.offsetY}/>
+                <Slider label="Blur Radius" handler={this.handler.bind(this, "blurRadius")} min={0} defaultValue={this.props.defaultShadow.blurRadius} />
+                <Slider label="Spread Radius" handler={this.handler.bind(this, "spreadRadius")} defaultValue={this.props.defaultShadow.spreadRadius} />
 
                 <ColorPicker label="Shadow Color" handler={this.handleColor.bind(this)}
                 defaultColor={{r: 0, g: 0, b: 0, a: 0.40}}/>
