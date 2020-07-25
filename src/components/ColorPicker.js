@@ -2,32 +2,33 @@ import React, { useRef, useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { ChromePicker } from 'react-color';
 import './../css/color-picker.css';
+import { stringToRgbObject } from '../utils/shadow';
 
 const ColorPicker = ({ label, handler, defaultColor }) => {
-    const formatted = useRef("rgba(" + defaultColor.r + ", " + defaultColor.g + ", " + defaultColor.b + ", " + defaultColor.a + ")");
+    const formatted = useRef(defaultColor);
     const [opened, setOpened] = useState(false);
-    const [color, setColor] = useState( {rgb: defaultColor });
+    const [color, setColor] = useState( {rgb: stringToRgbObject(defaultColor) });
 
     useEffect( () => {
-        formatColor(defaultColor);
-        setColor( defaultColor );
+        formatted.current = defaultColor;
+        setColor({rgb: stringToRgbObject(defaultColor)});
     }, [defaultColor] );
 
+
+
     const handleColor = color => {
-        setColor(color.rgb);
-
         formatted.current = formatColor(color.rgb);
-
         handler(formatted.current );
+        setColor(color);       
     };
 
     const togglePicker = () => {
         setOpened(!opened);
     };
 
-    const formatColor = color => {
+    const formatColor = localColor => {
         let formattedColor = "rgba(";
-        formattedColor += color.r + ", " + color.g + ", " + color.b + ", " + color.a + ")";
+        formattedColor += localColor.r + ", " + localColor.g + ", " + localColor.b + ", " + localColor.a + ")";
         return formattedColor;
     }
 
@@ -44,7 +45,7 @@ const ColorPicker = ({ label, handler, defaultColor }) => {
             {opened &&
                 <div className="picker-popover">
                     <div className="picker-cover" onClick={togglePicker} />
-                    <ChromePicker color={color}
+                    <ChromePicker color={color.rgb}
                         onChange={handleColor.bind(this)} />
                 </div>
             }
@@ -58,7 +59,7 @@ ColorPicker.propTypes = {
     /** A handler function to lift up the color state of the color picker. Required. */
     handler: PropTypes.func.isRequired,
     /** The default color to set the color picker to. */
-    defaultColor: PropTypes.object
+    defaultColor: PropTypes.string
 };
 
 ColorPicker.defaultProps = {
