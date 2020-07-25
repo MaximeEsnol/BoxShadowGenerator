@@ -7,7 +7,7 @@
     left: 0;
     width: 100%;
     margin: 0 auto;
-    padding: 20px;
+    padding: 40px 20px;
     box-sizing: border-box;
     box-shadow: 0px 0px 3px 0px rgba(153, 153, 153, 0.5),
                 0px -1px 5px 0px rgba(184, 184, 184, 0.26),
@@ -19,6 +19,22 @@
 
 .code:hover{
     transform: translateY(0);
+}
+
+.code svg {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    background-color: var(--link-color);
+    padding: 15px;
+    border-radius: 100px;
+    color: white;
+    transition: .8s transform cubic-bezier(0.68, -0.6, 0.32, 1.6);
+}
+
+.code:hover svg{
+    transform: translateX(-50%) translateY(-50%) rotate(180deg);
 }
 
 .code code {
