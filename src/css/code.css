@@ -1,0 +1,33 @@
+.code {
+    background: white;
+    z-index: 10;
+    position: fixed;
+    display: block;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    margin: 0 auto;
+    padding: 20px;
+    box-sizing: border-box;
+    box-shadow: 0px 0px 3px 0px rgba(153, 153, 153, 0.5),
+                0px -1px 5px 0px rgba(184, 184, 184, 0.26),
+                0px -3px 7px 0px rgba(223, 223, 223, 0.26);
+    transform: translateY(70%);
+    transition: transform .25s cubic-bezier(0.87, 0, 0.13, 1);
+    transition-delay: .2s;
+}
+
+.code:hover{
+    transform: translateY(0);
+}
+
+.code code {
+    display: block;
+    width: 40%;
+    max-height: 80px;
+    margin: 0 auto;
+    padding: 10px;
+    border: solid 1px #e6e6e6;
+    border-radius: 5px;
+    overflow-y: scroll;
+}
