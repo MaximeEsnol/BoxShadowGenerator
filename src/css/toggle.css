@@ -5,7 +5,7 @@
     height: 24px;
     position: relative;
     align-items: center;
-    justify-content: flex-start;
+    justify-content: space-between;
 }
 .input-field.toggle label {
     max-width: 40%;

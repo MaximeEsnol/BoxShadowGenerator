@@ -1,3 +1,24 @@
+.shadow-list{
+    padding: 15px 0;
+    overflow-y: scroll;
+    padding-bottom: 20px;
+}
+
+.shadow-list::-webkit-scrollbar{
+    width: 7px;
+    background: transparent; 
+    transition: all .2s ease-in-out;
+ }
+ 
+ .shadow-list::-webkit-scrollbar-track{
+    margin: 10px 0;
+ }
+ 
+ .shadow-list::-webkit-scrollbar-thumb {
+     background-color: #0000007d;
+     border-radius: 10px;
+ }
+
 .plus-button {
     color: var(--link-color);
     transition: .25s cubic-bezier(0.16, 1, 0.3, 1);
