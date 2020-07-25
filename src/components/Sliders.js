@@ -56,15 +56,15 @@ class Sliders extends React.Component {
                 <Slider label="Spread Radius" handler={this.handler.bind(this, "spreadRadius")} defaultValue={this.props.defaultShadow.spreadRadius} />
 
                 <ColorPicker label="Shadow Color" handler={this.handleColor.bind(this)}
-                defaultColor={stringToRgbObject( this.props.defaultShadow.color )}/>
+                defaultColor={this.props.defaultShadow.color}/>
 
                 <ColorPicker label="Box Color" 
                 handler={this.handler.bind(this, "boxColor")}
-                defaultColor={ {r: 240, g: 240, b: 240, a: 1} } />
+                defaultColor={"rgba(240,240,240,1)"} />
 
                 <ColorPicker label="Background Color" 
                 handler={this.handler.bind(this, "backgroundColor")}
-                defaultColor={ {r: 255, g: 255, b: 255, a: 1} } />
+                defaultColor={"rgba(255,255,255,1)"} />
 
                 <Slider label="Box Size" 
                 handler={this.handler.bind(this, "boxSize")} 
