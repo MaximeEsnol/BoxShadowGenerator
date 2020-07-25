@@ -20,21 +20,21 @@ class HomeScreen extends Component {
     }
 
     verifyValidShadowIndex = () => {
-        if ( this.state.boxShadows.length <= this.state.currentShadowIndex ) {
+        if (this.state.boxShadows.length <= this.state.currentShadowIndex) {
             let newIndex = this.state.boxShadows.length;
-            
-            this.setState( {
+
+            this.setState({
                 boxShadows: [...this.state.boxShadows, {}],
                 currentShadowIndex: newIndex
-            } );
+            });
         }
     }
 
     updateCurrentShadow = newShadow => {
         let shadows = [...this.state.boxShadows];
-        let targetShadow = [shadows[ this.state.currentShadowIndex ]];
+        let targetShadow = [shadows[this.state.currentShadowIndex]];
         targetShadow = newShadow;
-        shadows[ this.state.currentShadowIndex ] = targetShadow;
+        shadows[this.state.currentShadowIndex] = targetShadow;
 
         return shadows;
     }
@@ -53,39 +53,39 @@ class HomeScreen extends Component {
         };
 
         this.setState({
-            boxShadows: this.updateCurrentShadow( shadow ), 
-            backgroundColor: values.backgroundColor, 
+            boxShadows: this.updateCurrentShadow(shadow),
+            backgroundColor: values.backgroundColor,
             boxColor: values.boxColor,
             boxSize: values.boxSize
         });
     }
 
     handleAddShadow = () => {
-        let lastShadow = { ...this.state.boxShadows[this.state.currentShadowIndex]};
-        this.setState( { 
-            boxShadows: [...this.state.boxShadows, lastShadow ],
-            currentShadowIndex: this.state.currentShadowIndex+1
-        } );
+        let lastShadow = { ...this.state.boxShadows[this.state.currentShadowIndex] };
+        this.setState({
+            boxShadows: [...this.state.boxShadows, lastShadow],
+            currentShadowIndex: this.state.currentShadowIndex + 1
+        });
 
     }
 
-    handleSelectLayer = ( layerIndex ) => {
+    handleSelectLayer = (layerIndex) => {
         this.setState({
             currentShadowIndex: layerIndex,
             defaultSelection: this.state.boxShadows[layerIndex]
         });
     }
 
-    handleDeleteLayer = ( layerIndex ) => {
-        if ( this.state.boxShadows.length === 1 ) {
+    handleDeleteLayer = (layerIndex) => {
+        if (this.state.boxShadows.length === 1) {
             alert("You can't delete this layer.");
             return;
         }
 
         let shadows = [...this.state.boxShadows];
-        shadows.splice( layerIndex, 1 );
+        shadows.splice(layerIndex, 1);
 
-        let newIndex = ( layerIndex === 0 ) ? layerIndex : layerIndex - 1;
+        let newIndex = (layerIndex === 0) ? layerIndex : layerIndex - 1;
 
         this.setState({
             boxShadows: shadows,
@@ -95,25 +95,24 @@ class HomeScreen extends Component {
     }
 
     render() {
-        return(
+        return (
             <div className="container">
-                <Header/>
+                <Header />
                 <Content>
                     <Sliders onChangeValues={this.handleShadowValues.bind(this)}
-                    defaultShadow={this.state.defaultSelection} />
-                    <Box backgroundColor={this.state.backgroundColor} 
-                    boxColor={this.state.boxColor} 
-                    boxShadows={this.state.boxShadows}
-                    boxSize={this.state.boxSize}/>
+                        defaultShadow={this.state.defaultSelection} />
+                    <Box backgroundColor={this.state.backgroundColor}
+                        boxColor={this.state.boxColor}
+                        boxShadows={this.state.boxShadows}
+                        boxSize={this.state.boxSize} />
                     <ShadowList shadows={this.state.boxShadows}
-                    current={this.state.currentShadowIndex}
-                    addShadowHandler={this.handleAddShadow.bind(this)}
-                    onClickLayer={this.handleSelectLayer.bind(this)}
-                    onClickDelete={this.handleDeleteLayer.bind(this)}/>
+                        current={this.state.currentShadowIndex}
+                        addShadowHandler={this.handleAddShadow.bind(this)}
+                        onClickLayer={this.handleSelectLayer.bind(this)}
+                        onClickDelete={this.handleDeleteLayer.bind(this)} />
                 </Content>
 
-                
-                <Code shadows={this.state.boxShadows}/>
+                <Code shadows={this.state.boxShadows} />
             </div>
         )
     }
