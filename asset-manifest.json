@@ -1,24 +1,24 @@
 {
   "files": {
-    "main.css": "/static/css/main.ecdb5848.chunk.css",
-    "main.js": "/static/js/main.02078f6a.chunk.js",
-    "main.js.map": "/static/js/main.02078f6a.chunk.js.map",
-    "runtime-main.js": "/static/js/runtime-main.48fa0725.js",
-    "runtime-main.js.map": "/static/js/runtime-main.48fa0725.js.map",
-    "static/js/2.2334c384.chunk.js": "/static/js/2.2334c384.chunk.js",
-    "static/js/2.2334c384.chunk.js.map": "/static/js/2.2334c384.chunk.js.map",
-    "index.html": "/index.html",
-    "precache-manifest.f3bbee2b3dea5c7b1377224012c22c6a.js": "/precache-manifest.f3bbee2b3dea5c7b1377224012c22c6a.js",
-    "service-worker.js": "/service-worker.js",
-    "static/css/main.ecdb5848.chunk.css.map": "/static/css/main.ecdb5848.chunk.css.map",
-    "static/js/2.2334c384.chunk.js.LICENSE.txt": "/static/js/2.2334c384.chunk.js.LICENSE.txt",
-    "static/media/index.css": "/static/media/Roboto-Regular.11eabca2.ttf",
-    "static/media/logo.svg": "/static/media/logo.5d5d9eef.svg"
+    "main.css": "/BoxShadowGenerator/static/css/main.99ade9c9.chunk.css",
+    "main.js": "/BoxShadowGenerator/static/js/main.0d263c0a.chunk.js",
+    "main.js.map": "/BoxShadowGenerator/static/js/main.0d263c0a.chunk.js.map",
+    "runtime-main.js": "/BoxShadowGenerator/static/js/runtime-main.e2a2185d.js",
+    "runtime-main.js.map": "/BoxShadowGenerator/static/js/runtime-main.e2a2185d.js.map",
+    "static/js/2.2334c384.chunk.js": "/BoxShadowGenerator/static/js/2.2334c384.chunk.js",
+    "static/js/2.2334c384.chunk.js.map": "/BoxShadowGenerator/static/js/2.2334c384.chunk.js.map",
+    "index.html": "/BoxShadowGenerator/index.html",
+    "precache-manifest.f8abb08cf23dea22f1f1961785159700.js": "/BoxShadowGenerator/precache-manifest.f8abb08cf23dea22f1f1961785159700.js",
+    "service-worker.js": "/BoxShadowGenerator/service-worker.js",
+    "static/css/main.99ade9c9.chunk.css.map": "/BoxShadowGenerator/static/css/main.99ade9c9.chunk.css.map",
+    "static/js/2.2334c384.chunk.js.LICENSE.txt": "/BoxShadowGenerator/static/js/2.2334c384.chunk.js.LICENSE.txt",
+    "static/media/index.css": "/BoxShadowGenerator/static/media/Roboto-Regular.11eabca2.ttf",
+    "static/media/logo.svg": "/BoxShadowGenerator/static/media/logo.5d5d9eef.svg"
   },
   "entrypoints": [
-    "static/js/runtime-main.48fa0725.js",
+    "static/js/runtime-main.e2a2185d.js",
     "static/js/2.2334c384.chunk.js",
-    "static/css/main.ecdb5848.chunk.css",
-    "static/js/main.02078f6a.chunk.js"
+    "static/css/main.99ade9c9.chunk.css",
+    "static/js/main.0d263c0a.chunk.js"
   ]
 }
