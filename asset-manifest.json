@@ -1,24 +1,24 @@
 {
   "files": {
-    "main.css": "/BoxShadowGenerator/static/css/main.99ade9c9.chunk.css",
-    "main.js": "/BoxShadowGenerator/static/js/main.6dfeb8f9.chunk.js",
-    "main.js.map": "/BoxShadowGenerator/static/js/main.6dfeb8f9.chunk.js.map",
-    "runtime-main.js": "/BoxShadowGenerator/static/js/runtime-main.e2a2185d.js",
-    "runtime-main.js.map": "/BoxShadowGenerator/static/js/runtime-main.e2a2185d.js.map",
-    "static/js/2.2334c384.chunk.js": "/BoxShadowGenerator/static/js/2.2334c384.chunk.js",
-    "static/js/2.2334c384.chunk.js.map": "/BoxShadowGenerator/static/js/2.2334c384.chunk.js.map",
-    "index.html": "/BoxShadowGenerator/index.html",
-    "precache-manifest.221160cbf58e1c0f486de017b0cede88.js": "/BoxShadowGenerator/precache-manifest.221160cbf58e1c0f486de017b0cede88.js",
-    "service-worker.js": "/BoxShadowGenerator/service-worker.js",
-    "static/css/main.99ade9c9.chunk.css.map": "/BoxShadowGenerator/static/css/main.99ade9c9.chunk.css.map",
-    "static/js/2.2334c384.chunk.js.LICENSE.txt": "/BoxShadowGenerator/static/js/2.2334c384.chunk.js.LICENSE.txt",
-    "static/media/index.css": "/BoxShadowGenerator/static/media/Roboto-Regular.11eabca2.ttf",
-    "static/media/logo.svg": "/BoxShadowGenerator/static/media/logo.5d5d9eef.svg"
+    "main.css": "/projects/BoxShadowGenerator/static/css/main.a6e1c033.chunk.css",
+    "main.js": "/projects/BoxShadowGenerator/static/js/main.4d612792.chunk.js",
+    "main.js.map": "/projects/BoxShadowGenerator/static/js/main.4d612792.chunk.js.map",
+    "runtime-main.js": "/projects/BoxShadowGenerator/static/js/runtime-main.ee3673ca.js",
+    "runtime-main.js.map": "/projects/BoxShadowGenerator/static/js/runtime-main.ee3673ca.js.map",
+    "static/js/2.2334c384.chunk.js": "/projects/BoxShadowGenerator/static/js/2.2334c384.chunk.js",
+    "static/js/2.2334c384.chunk.js.map": "/projects/BoxShadowGenerator/static/js/2.2334c384.chunk.js.map",
+    "index.html": "/projects/BoxShadowGenerator/index.html",
+    "precache-manifest.348926d9bf2a717eb68c6e8ab5ad30a6.js": "/projects/BoxShadowGenerator/precache-manifest.348926d9bf2a717eb68c6e8ab5ad30a6.js",
+    "service-worker.js": "/projects/BoxShadowGenerator/service-worker.js",
+    "static/css/main.a6e1c033.chunk.css.map": "/projects/BoxShadowGenerator/static/css/main.a6e1c033.chunk.css.map",
+    "static/js/2.2334c384.chunk.js.LICENSE.txt": "/projects/BoxShadowGenerator/static/js/2.2334c384.chunk.js.LICENSE.txt",
+    "static/media/index.css": "/projects/BoxShadowGenerator/static/media/Roboto-Regular.11eabca2.ttf",
+    "static/media/logo.svg": "/projects/BoxShadowGenerator/static/media/logo.5d5d9eef.svg"
   },
   "entrypoints": [
-    "static/js/runtime-main.e2a2185d.js",
+    "static/js/runtime-main.ee3673ca.js",
     "static/js/2.2334c384.chunk.js",
-    "static/css/main.99ade9c9.chunk.css",
-    "static/js/main.6dfeb8f9.chunk.js"
+    "static/css/main.a6e1c033.chunk.css",
+    "static/js/main.4d612792.chunk.js"
   ]
 }
