@@ -59,8 +59,7 @@ input[type=range]::-webkit-slider-thumb {
     width: 15px;
     border-radius: 100px;
     background-color: var(--link-color);
-    position: absolute;
-    top: -3px;
+    transform: translateY(-3px);
     transition: background-color ease-in-out .2s;
 }
 
