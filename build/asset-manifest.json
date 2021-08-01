@@ -1,24 +1,24 @@
 {
   "files": {
-    "main.css": "/projects/BoxShadowGenerator/static/css/main.a6e1c033.chunk.css",
-    "main.js": "/projects/BoxShadowGenerator/static/js/main.4d612792.chunk.js",
-    "main.js.map": "/projects/BoxShadowGenerator/static/js/main.4d612792.chunk.js.map",
-    "runtime-main.js": "/projects/BoxShadowGenerator/static/js/runtime-main.ee3673ca.js",
-    "runtime-main.js.map": "/projects/BoxShadowGenerator/static/js/runtime-main.ee3673ca.js.map",
-    "static/js/2.2334c384.chunk.js": "/projects/BoxShadowGenerator/static/js/2.2334c384.chunk.js",
-    "static/js/2.2334c384.chunk.js.map": "/projects/BoxShadowGenerator/static/js/2.2334c384.chunk.js.map",
-    "index.html": "/projects/BoxShadowGenerator/index.html",
-    "precache-manifest.348926d9bf2a717eb68c6e8ab5ad30a6.js": "/projects/BoxShadowGenerator/precache-manifest.348926d9bf2a717eb68c6e8ab5ad30a6.js",
-    "service-worker.js": "/projects/BoxShadowGenerator/service-worker.js",
-    "static/css/main.a6e1c033.chunk.css.map": "/projects/BoxShadowGenerator/static/css/main.a6e1c033.chunk.css.map",
-    "static/js/2.2334c384.chunk.js.LICENSE.txt": "/projects/BoxShadowGenerator/static/js/2.2334c384.chunk.js.LICENSE.txt",
-    "static/media/index.css": "/projects/BoxShadowGenerator/static/media/Roboto-Regular.11eabca2.ttf",
-    "static/media/logo.svg": "/projects/BoxShadowGenerator/static/media/logo.5d5d9eef.svg"
+    "main.css": "/static/css/main.9c820fb8.chunk.css",
+    "main.js": "/static/js/main.760e43a0.chunk.js",
+    "main.js.map": "/static/js/main.760e43a0.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.48fa0725.js",
+    "runtime-main.js.map": "/static/js/runtime-main.48fa0725.js.map",
+    "static/js/2.710a7ba4.chunk.js": "/static/js/2.710a7ba4.chunk.js",
+    "static/js/2.710a7ba4.chunk.js.map": "/static/js/2.710a7ba4.chunk.js.map",
+    "index.html": "/index.html",
+    "precache-manifest.68590881b48fdb8a49b01b54e441359c.js": "/precache-manifest.68590881b48fdb8a49b01b54e441359c.js",
+    "service-worker.js": "/service-worker.js",
+    "static/css/main.9c820fb8.chunk.css.map": "/static/css/main.9c820fb8.chunk.css.map",
+    "static/js/2.710a7ba4.chunk.js.LICENSE.txt": "/static/js/2.710a7ba4.chunk.js.LICENSE.txt",
+    "static/media/index.css": "/static/media/Roboto-Regular.11eabca2.ttf",
+    "static/media/logo.svg": "/static/media/logo.5d5d9eef.svg"
   },
   "entrypoints": [
-    "static/js/runtime-main.ee3673ca.js",
-    "static/js/2.2334c384.chunk.js",
-    "static/css/main.a6e1c033.chunk.css",
-    "static/js/main.4d612792.chunk.js"
+    "static/js/runtime-main.48fa0725.js",
+    "static/js/2.710a7ba4.chunk.js",
+    "static/css/main.9c820fb8.chunk.css",
+    "static/js/main.760e43a0.chunk.js"
   ]
 }
